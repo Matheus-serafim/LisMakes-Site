@@ -3,38 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>testelismakes</title>
-    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon" />
+
+    <!-- SEO -->
+    <title>LisMakes</title>
+    <meta name="theme-color" content="#8b1e3f" />
+
+    <meta
+      name="description"
+      content="LisMakes - Loja de maquiagens com batons, gloss, blush, iluminadores e muito mais. Entrega rápida e retirada no local."
+    />
+
+    <!-- Ícone -->
+    <link rel="shortcut icon" href="imagem/logo.png" type="image/x-icon" />
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
   </head>
+
   <body>
     <!-- Cabeçalho -->
     <header id="cabeca">
-      <img
-        src="imagem/Cópia_de_logo-removebg-preview.png"
-        alt="Logo LisMakes"
-      />
+      <img src="imagem/logo-lismakes.png" alt="Logo LisMakes" loading="lazy" />
     </header>
+
     <!-- Barra fixa -->
     <div id="barra-fixa">
       <div class="menu-pesquisa">
-        <button class="btn-menu"><i class="fa-solid fa-bars"></i></button>
+        <button class="btn-menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
         <div class="barra-pesquisa">
           <input type="text" placeholder="Digite sua maquiagem..." />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </div>
       </div>
+
       <!-- Categorias -->
       <nav class="categorias">
         <ul>
-          <li><a href="#" data-categoria="todos"> Todos </a></li>
-          <li><a href="#" data-categoria="rosto"> Rosto </a></li>
-          <li><a href="#" data-categoria="olhos"> Olhos </a></li>
-          <li><a href="#" data-categoria="labios"> Lábios </a></li>
+          <li><a href="#" data-categoria="todos">Todos</a></li>
+          <li><a href="#" data-categoria="rosto">Rosto</a></li>
+          <li><a href="#" data-categoria="olhos">Olhos</a></li>
+          <li><a href="#" data-categoria="labios">Lábios</a></li>
         </ul>
       </nav>
     </div>
@@ -47,8 +67,13 @@
               <div
                 class="slide-produto"
                 data-nome="Batom Líquido Matte MaxLove"
+                data-preco="20.00"
               >
-                <img src="imagem/batons-maxlove.png" alt="batons-maxlove" />
+                <img
+                  src="imagem/batons-maxlove.png"
+                  alt="batons-maxlove"
+                  loading="lazy"
+                />
               </div>
 
               <div
@@ -56,8 +81,9 @@
                 data-nome="Batom Matte MaxLove - Cor 50"
               >
                 <img
-                  src="imagem/batom-líquido-matte-maxlove.png"
+                  src="imagem/batom-liquido-matte-maxlove.png"
                   alt="batons-maxlove"
+                  loading="lazy"
                 />
               </div>
 
@@ -66,8 +92,9 @@
                 data-nome="Batom Matte MaxLove - Cor 658"
               >
                 <img
-                  src="imagem/batom-líquido-matte-nude-maxlove.png"
+                  src="imagem/batom-liquido-matte-nude-maxlove.png"
                   alt="batons-maxlove"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -90,14 +117,23 @@
         <div class="card" data-categoria="rosto" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Blush Cremoso Febella">
-                <img src="imagem/blush-febella.png" alt="blush-febella" />
+              <div
+                class="slide-produto"
+                data-nome="Blush Cremoso Febella"
+                data-preco="20.00"
+              >
+                <img
+                  src="imagem/blush-febella.png"
+                  alt="blush-febella"
+                  loading="lazy"
+                />
               </div>
 
               <div class="slide-produto" data-nome="Blush Febella - Cor 01">
                 <img
                   src="imagem/blush-cremoso-febella.png"
                   alt="blush-febella"
+                  loading="lazy"
                 />
               </div>
 
@@ -105,6 +141,7 @@
                 <img
                   src="imagem/blush-cremoso-febella2.png"
                   alt="blush-febella"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -127,19 +164,32 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Gloss Labial Vivai">
+              <div
+                class="slide-produto"
+                data-nome="Gloss Labial Vivai"
+                data-preco="20.00"
+              >
                 <img
                   src="imagem/batom-matte-vivai.png"
                   alt="Gloss Labial Vivai"
+                  loading="lazy"
                 />
               </div>
 
               <div class="slide-produto" data-nome="Gloss Vivai - Cor 05">
-                <img src="imagem/batom-matte1.png" alt="Gloss Labial Vivai" />
+                <img
+                  src="imagem/batom-matte1.png"
+                  alt="Gloss Labial Vivai"
+                  loading="lazy"
+                />
               </div>
 
               <div class="slide-produto" data-nome="Gloss Vivai - Cor 04">
-                <img src="imagem/batom-matte2.png" alt="Gloss Labial Vivai" />
+                <img
+                  src="imagem/batom-matte2.png"
+                  alt="Gloss Labial Vivai"
+                  loading="lazy"
+                />
               </div>
             </div>
 
@@ -164,14 +214,20 @@
               <div
                 class="slide-produto"
                 data-nome="Blush Compacto Selva Neon Miss Rôse"
+                data-preco="20.00"
               >
-                <img src="imagem/blush-miss-rose.png" alt="Blush Selva" />
+                <img
+                  src="imagem/blush-miss-rose.png"
+                  alt="Blush Selva"
+                  loading="lazy"
+                />
               </div>
 
               <div class="slide-produto" data-nome="Blush Selva - Cor 03">
                 <img
                   src="imagem/blush-compacto-selva-neon-miss-rose.png"
                   alt="Blush Selva"
+                  loading="lazy"
                 />
               </div>
 
@@ -179,6 +235,7 @@
                 <img
                   src="imagem/blush-compacto-selva-neon-miss-rose2.png"
                   alt="Blush Selva"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -201,10 +258,15 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Lip Gloss Lady Beauty">
+              <div
+                class="slide-produto"
+                data-nome="Lip Gloss Lady Beauty"
+                data-preco="30.00"
+              >
                 <img
                   src="imagem/lip-gloss-pinkglow-lady-beauty.png"
                   alt="Lip Gloss Lady Beauty"
+                  loading="lazy"
                 />
               </div>
 
@@ -215,6 +277,7 @@
                 <img
                   src="imagem/gloss-ladybeauty.png"
                   alt="Lip Gloss Lady Beauty"
+                  loading="lazy"
                 />
               </div>
 
@@ -225,6 +288,7 @@
                 <img
                   src="imagem/gloss-ladybeauty2.png"
                   alt="Lip Gloss Lady Beauty"
+                  loading="lazy"
                 />
               </div>
 
@@ -235,6 +299,7 @@
                 <img
                   src="imagem/gloss-ladybeauty3.png"
                   alt="Lip Gloss Lady Beauty"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -260,10 +325,12 @@
               <div
                 class="slide-produto"
                 data-nome="Iluminador Compacto Selva Neon Miss Rôse"
+                data-preco="20.00"
               >
                 <img
                   src="imagem/iluminador-miss-rose.png"
                   alt="Iluminador Compacto Selva Neon Miss Rôse"
+                  loading="lazy"
                 />
               </div>
 
@@ -271,6 +338,7 @@
                 <img
                   src="imagem/iluminador-compacto-selva-neon-miss-rose.png"
                   alt="Iluminador Compacto Selva Neon Miss Rôse"
+                  loading="lazy"
                 />
               </div>
 
@@ -278,6 +346,7 @@
                 <img
                   src="imagem/iluminador-compacto-selva-neon-miss-rose2.png"
                   alt="Iluminador Compacto Selva Neon Miss Rôse"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -286,7 +355,9 @@
             <button class="next-produto">›</button>
           </div>
 
-          <h3 class="nome-produto">Iluminador Compacto Selva Neon - Miss Rôse</h3>
+          <h3 class="nome-produto">
+            Iluminador Compacto Selva Neon - Miss Rôse
+          </h3>
 
           <button
             class="btn-comprar"
@@ -300,10 +371,15 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Lip Balm Cherry Lips - Ruby Rose">
+              <div
+                class="slide-produto"
+                data-nome="Lip Balm Cherry Lips - Ruby Rose"
+                data-preco="30.00"
+              >
                 <img
                   src="imagem/lip-balm-cherry-lips-rubyrose.png"
                   alt="Lip Balm Cherry Lips - Ruby Rose"
+                  loading="lazy"
                 />
               </div>
 
@@ -311,6 +387,7 @@
                 <img
                   src="imagem/lip-balm1.png"
                   alt="Lip Balm Cherry Lips - Ruby Rose"
+                  loading="lazy"
                 />
               </div>
 
@@ -318,6 +395,7 @@
                 <img
                   src="imagem/lip-balm2.png"
                   alt="Lip Balm Cherry Lips - Ruby Rose"
+                  loading="lazy"
                 />
               </div>
 
@@ -325,6 +403,7 @@
                 <img
                   src="imagem/lip-balm3.png"
                   alt="Lip Balm Cherry Lips - Ruby Rose"
+                  loading="lazy"
                 />
               </div>
 
@@ -332,6 +411,7 @@
                 <img
                   src="imagem/cores.jpg"
                   alt="Tabela De Cores 40/50/60"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -354,21 +434,37 @@
         <div class="card" data-categoria="rosto" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Lenços Demaquilantes - Dermachem">
-                <img src="imagem/lenços.png" alt="Lenços Demaquilantes - Dermachem" />
-              </div>
-
-              <div class="slide-produto" data-nome="Lenços Com Colágeno - Para Todos os Tipos de Pele">
+              <div
+                class="slide-produto"
+                data-nome="Lenços Demaquilantes - Dermachem"
+                data-preco="20.00"
+              >
                 <img
-                  src="imagem/lenços1.png"
+                  src="imagem/lenços.png"
                   alt="Lenços Demaquilantes - Dermachem"
+                  loading="lazy"
                 />
               </div>
 
-              <div class="slide-produto" data-nome="Lenços Com Ácido Salicílico - Pele Mistas e Oleosas">
+              <div
+                class="slide-produto"
+                data-nome="Lenços Com Colágeno - Para Todos os Tipos de Pele"
+              >
+                <img
+                  src="imagem/lenços1.png"
+                  alt="Lenços Demaquilantes - Dermachem"
+                  loading="lazy"
+                />
+              </div>
+
+              <div
+                class="slide-produto"
+                data-nome="Lenços Com Ácido Salicílico - Pele Mistas e Oleosas"
+              >
                 <img
                   src="imagem/lenços2.png"
                   alt="Lenços Demaquilantes - Dermachem"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -391,24 +487,31 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Lip Gloss 24K Gold Love - Lua&Neve">
+              <div
+                class="slide-produto"
+                data-nome="Lip Gloss 24K Gold Love - Lua&Neve"
+                data-preco="20.00"
+              >
                 <img
-                  src="imagem/lip-gloss-24k-gold-love-lua&neve.png"
+                  src="imagem/lip-gloss-24k-gold-love-luaeneve.png"
                   alt="Lip Gloss 24K Gold Love - Lua&Neve"
+                  loading="lazy"
                 />
               </div>
 
               <div class="slide-produto" data-nome="Gloss Lua&Neve - Cor 03">
                 <img
-                  src="imagem/lip-gloss-lua&neve1.png"
+                  src="imagem/lip-gloss-luaeneve1.png"
                   alt="Lip Gloss 24K Gold Love - Lua&Neve"
+                  loading="lazy"
                 />
               </div>
 
               <div class="slide-produto" data-nome="Gloss Lua&Neve - Cor 06">
                 <img
-                  src="imagem/lip-gloss-lua&neve2.png"
+                  src="imagem/lip-gloss-luaeneve2.png"
                   alt="Lip Gloss 24K Gold Love - Lua&Neve"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -431,10 +534,15 @@
         <div class="card" data-categoria="rosto" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Sombra Para Sobrancelhas - Lua&Neve">
+              <div
+                class="slide-produto"
+                data-nome="Sombra Para Sobrancelhas - Lua&Neve"
+                data-preco="20.00"
+              >
                 <img
                   src="imagem/paleta-de-sobrancelhas2.png"
                   alt="Sombra Para Sobrancelhas - Lua&Neve"
+                  loading="lazy"
                 />
               </div>
 
@@ -442,13 +550,15 @@
                 <img
                   src="imagem/paleta-de-sobrancelhas.png"
                   alt="Sombra Para Sobrancelhas - Lua&Neve"
+                  loading="lazy"
                 />
               </div>
 
               <div class="slide-produto" data-nome="Sombra Lua&Neve - Cor 02">
                 <img
-                  src="imagem/paleta-de-sobrancelhas-4cores-lua&neve.png"
+                  src="imagem/paleta-de-sobrancelhas-4cores-luaeneve.png"
                   alt="Sombra Para Sobrancelhas - Lua&Neve"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -471,14 +581,25 @@
         <div class="card" data-categoria="rosto" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Sombra Para Sobrancelhas Duo Brow Perfection - Ruby Rose">
-                <img src="imagem/ruby-rose.png" alt="Sombra Para Sobrancelhas Duo Brow Perfection - Ruby Rose" />
+              <div
+                class="slide-produto"
+                data-nome="Sombra Para Sobrancelhas Duo Brow Perfection - Ruby Rose"
+              >
+                <img
+                  src="imagem/ruby-rose.png"
+                  alt="Sombra Para Sobrancelhas Duo Brow Perfection - Ruby Rose"
+                  loading="lazy"
+                />
               </div>
 
-              <div class="slide-produto" data-nome="Duo 05 - Tonalidades: 09 e 10">
+              <div
+                class="slide-produto"
+                data-nome="Duo 05 - Tonalidades: 09 e 10"
+              >
                 <img
                   src="imagem/ruby-rose(2).png"
                   alt="Sombra Para Sobrancelhas Duo Brow Perfection - Ruby Rose"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -487,7 +608,9 @@
             <button class="next-produto">›</button>
           </div>
 
-          <h3 class="nome-produto">Sombra Para Sobrancelhas Duo Brow Perfection - Ruby Rose</h3>
+          <h3 class="nome-produto">
+            Sombra Para Sobrancelhas Duo Brow Perfection - Ruby Rose
+          </h3>
 
           <button
             class="btn-comprar"
@@ -501,17 +624,25 @@
         <div class="card" data-categoria="olhos" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Máscara de Cílios - Febella">
+              <div
+                class="slide-produto"
+                data-nome="Máscara de Cílios - Febella"
+              >
                 <img
-                  src="imagem/máscara-dapop-febella.png"
+                  src="imagem/mascara-dapop-febella.png"
                   alt="Máscara de Cílios - Febella"
+                  loading="lazy"
                 />
               </div>
 
-              <div class="slide-produto" data-nome="Máscara de Cílios - Febella">
+              <div
+                class="slide-produto"
+                data-nome="Máscara de Cílios - Febella"
+              >
                 <img
-                  src="imagem/máscara-dapop.png"
+                  src="imagem/mascara-dapop.png"
                   alt="Máscara de Cílios - Febella"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -536,15 +667,17 @@
             <div class="slides-produto">
               <div class="slide-produto" data-nome="Lápis de Olho - Pink21">
                 <img
-                  src="imagem/lápis-de-olho-pink21.png"
+                  src="imagem/lapis-de-olho-pink21.png"
                   alt="Lápis de Olho - Pink21"
+                  loading="lazy"
                 />
               </div>
 
               <div class="slide-produto" data-nome="Lápis de Olho - Pink21">
                 <img
-                  src="imagem/lápis-de-olho.png"
+                  src="imagem/lapis-de-olho.png"
                   alt="Lápis de Olho - Pink21"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -568,13 +701,18 @@
           <div class="slider-produto">
             <div class="slides-produto">
               <div class="slide-produto" data-nome="Bronzer Glam - Vivai">
-                <img src="imagem/bronzer-vivai.png" alt="Bronzer Glam - Vivai" />
+                <img
+                  src="imagem/bronzer-vivai.png"
+                  alt="Bronzer Glam - Vivai"
+                  loading="lazy"
+                />
               </div>
 
               <div class="slide-produto" data-nome="Bronzer Vivai - Cor 04">
                 <img
                   src="imagem/bronzer-vivai2.png"
                   alt="Bronzer Glam - Vivai"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -594,17 +732,22 @@
           </button>
         </div>
 
-        <div class="card" data-categoria="labio" data-status="disponivel">
+        <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
               <div class="slide-produto" data-nome="Honey Lips - Asti">
-                <img src="imagem/honey-lips-asti.png" alt="Honey Lips - Asti" />
+                <img
+                  src="imagem/honey-lips-asti.png"
+                  alt="Honey Lips - Asti"
+                  loading="lazy"
+                />
               </div>
 
               <div class="slide-produto" data-nome="Honey Lips - Asti">
                 <img
                   src="imagem/honey1.png"
                   alt="Honey Lips - Asti"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -629,15 +772,17 @@
             <div class="slides-produto">
               <div class="slide-produto" data-nome="Máscara Cílios - Vivai">
                 <img
-                  src="imagem/máscara-cilios-vivai.png"
+                  src="imagem/mascara-cilios-vivai.png"
                   alt="Máscara Cílios - Vivai"
+                  loading="lazy"
                 />
               </div>
 
               <div class="slide-produto" data-nome="Máscara Cílios - Vivai">
                 <img
-                  src="imagem/máscara-de-cílios-vivai.png"
+                  src="imagem/mascara-de-cílios-vivai.png"
                   alt="Máscara Cílios - Vivai"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -660,17 +805,25 @@
         <div class="card" data-categoria="olhos" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Máscara de Cílios FireWork - Lua&Neve">
+              <div
+                class="slide-produto"
+                data-nome="Máscara de Cílios FireWork - Lua&Neve"
+              >
                 <img
-                  src="imagem/máscara-para-cílios-firework-lua&neve.png"
+                  src="imagem/mascara-firework-luaeneve.png"
                   alt="Máscara de Cílios FireWork - Lua&Neve"
+                  loading="lazy"
                 />
               </div>
 
-              <div class="slide-produto" data-nome="Máscara de Cílios FireWork - Lua&Neve">
+              <div
+                class="slide-produto"
+                data-nome="Máscara de Cílios FireWork - Lua&Neve"
+              >
                 <img
-                  src="imagem/lua&neve.png"
+                  src="imagem/luaeneve.png"
                   alt="Máscara de Cílios FireWork - Lua&Neve"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -694,13 +847,21 @@
           <div class="slider-produto">
             <div class="slides-produto">
               <div class="slide-produto" data-nome="Pó Compacto Matte - Alleva">
-                <img src="imagem/pó-compacto-alleva.png" alt="Pó Compacto Matte - Alleva" />
+                <img
+                  src="imagem/po-compacto-alleva.png"
+                  alt="Pó Compacto Matte - Alleva"
+                  loading="lazy"
+                />
               </div>
 
-              <div class="slide-produto" data-nome="Pó Compacto Alleva - Cor 06">
+              <div
+                class="slide-produto"
+                data-nome="Pó Compacto Alleva - Cor 06"
+              >
                 <img
-                  src="imagem/pó-alleva.png"
+                  src="imagem/po-alleva.png"
                   alt="Pó Compacto Matte - Alleva"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -724,13 +885,18 @@
           <div class="slider-produto">
             <div class="slides-produto">
               <div class="slide-produto" data-nome="Kit Esponja Losango Clim">
-                <img src="imagem/esponja-clim.png" alt="Kit Esponja Losango Clim" />
+                <img
+                  src="imagem/esponja-clim.png"
+                  alt="Kit Esponja Losango Clim"
+                  loading="lazy"
+                />
               </div>
 
               <div class="slide-produto" data-nome="Kit Esponja Losango Clim">
                 <img
                   src="imagem/esponja-losango-clim.png"
                   alt="Kit Esponja Losango Clim"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -753,17 +919,25 @@
         <div class="card" data-categoria="rosto" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Gel Para Sobrancelhas Melu - Ruby Rose">
+              <div
+                class="slide-produto"
+                data-nome="Gel Para Sobrancelhas Melu - Ruby Rose"
+              >
                 <img
                   src="imagem/gel-sobrancelhas-melu-ruby-rose.png"
                   alt="Gel Para Sobrancelhas Melu - Ruby Rose"
+                  loading="lazy"
                 />
               </div>
 
-              <div class="slide-produto" data-nome="Gel Para Sobrancelhas Melu - Ruby Rose">
+              <div
+                class="slide-produto"
+                data-nome="Gel Para Sobrancelhas Melu - Ruby Rose"
+              >
                 <img
                   src="imagem/gel.jpg"
                   alt="Gel Para Sobrancelhas Melu - Ruby Rose"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -787,7 +961,11 @@
           <div class="slider-produto">
             <div class="slides-produto">
               <div class="slide-produto" data-nome="Pó banana - Lady Beauty">
-                <img src="imagem/pó-banana.webp" alt="Pó banana - Lady Beauty" />
+                <img
+                  src="imagem/po-banana.webp"
+                  alt="Pó banana - Lady Beauty"
+                  loading="lazy"
+                />
               </div>
             </div>
 
@@ -809,10 +987,14 @@
         <div class="card" data-categoria="rosto" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Iluminador Compacto Wike Make 01 - Miss Rôse">
+              <div
+                class="slide-produto"
+                data-nome="Iluminador Compacto Wike Make 01 - Miss Rôse"
+              >
                 <img
                   src="imagem/iluminador-compacto-wike-make.png"
                   alt="Iluminador Compacto Wiki Make - Miss Rôse"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -821,7 +1003,9 @@
             <button class="next-produto">›</button>
           </div>
 
-          <h3 class="nome-produto">Iluminador Compacto Wike Make 01 - Miss Rôse</h3>
+          <h3 class="nome-produto">
+            Iluminador Compacto Wike Make 01 - Miss Rôse
+          </h3>
 
           <button
             class="btn-comprar"
@@ -835,10 +1019,14 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Gloss Labial Efeito Volume - Miss Rôse">
+              <div
+                class="slide-produto"
+                data-nome="Gloss Labial Efeito Volume - Miss Rôse"
+              >
                 <img
-                  src="imagem/gloss-líquido-voluminous-miss-rose.png"
+                  src="imagem/gloss-liquido-voluminous-miss-rose.png"
                   alt="Gloss Labial Efeito Volume - Miss Rôse"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -861,10 +1049,14 @@
         <div class="card" data-categoria="rosto" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Esponja Chanfrada - Pink21">
+              <div
+                class="slide-produto"
+                data-nome="Esponja Chanfrada - Pink21 (Uma Unidade)"
+              >
                 <img
-                  src="imagem/esponja-chanfrada-pink21 (2).png"
+                  src="imagem/esponja-chanfrada-pink21.png"
                   alt="Esponja Chanfrada - Pink21"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -873,7 +1065,7 @@
             <button class="next-produto">›</button>
           </div>
 
-          <h3 class="nome-produto">Esponja Chanfrada - Pink21 (Uma Unidade) </h3>
+          <h3 class="nome-produto">Esponja Chanfrada - Pink21 (Uma Unidade)</h3>
 
           <button
             class="btn-comprar"
@@ -884,13 +1076,17 @@
           </button>
         </div>
 
-        <div class="card" data-categoria="olhos" data-status="indisponivel">
+        <div class="card" data-categoria="olhos" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Caneta Delineadora - Miss Rôse">
+              <div
+                class="slide-produto"
+                data-nome="Caneta Delineadora Sweet Heart - Lua&Neve"
+              >
                 <img
-                  src="imagem/delineado-miss-rosê.webp"
-                  alt="Caneta Delineadora - Miss Rôse"
+                  src="imagem/caneta-delineadora.png"
+                  alt="Caneta Delineadora Sweet Heart - Lua&Neve"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -899,11 +1095,13 @@
             <button class="next-produto">›</button>
           </div>
 
-          <h3 class="nome-produto">Caneta Delineadora - Miss Rôse</h3>
+          <h3 class="nome-produto">
+            Caneta Delineadora Sweet Heart - Lua&Neve
+          </h3>
 
           <button
             class="btn-comprar"
-            data-nome="Caneta Delineadora - Miss Rôse"
+            data-nome="Caneta Delineadora Sweet Heart - Lua&Neve"
             data-preco="10.00"
           >
             Adicionar ao carrinho
@@ -913,10 +1111,14 @@
         <div class="card" data-categoria="olhos" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Cola Pro Para Cílios - Toque Especial">
+              <div
+                class="slide-produto"
+                data-nome="Cola Pro Para Cílios - Toque Especial"
+              >
                 <img
-                  src="imagem/cola-de-cílios-toque-especial.png"
+                  src="imagem/cola-de-cilios-toque-especial.png"
                   alt="Cola Pro Para Cílios - Toque Especial"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -939,10 +1141,14 @@
         <div class="card" data-categoria="rosto" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Bruma Matte Fix - Miss Rôse">
+              <div
+                class="slide-produto"
+                data-nome="Bruma Matte Fix - Miss Rôse"
+              >
                 <img
                   src="imagem/bruma-matte-fix-miss-rose.png"
                   alt="Bruma Matte Fix - Miss Rôse"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -965,10 +1171,14 @@
         <div class="card" data-categoria="rosto" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Bruma Matte Wike Make - Miss Rôse">
+              <div
+                class="slide-produto"
+                data-nome="Bruma Matte Wike Make - Miss Rôse"
+              >
                 <img
                   src="imagem/bruma-matte-wike-make.png"
                   alt="Bruma Matte Wike Make - Miss Rôse"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -991,10 +1201,14 @@
         <div class="card" data-categoria="rosto" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Blush Compacto 03 - Miss Rôse">
+              <div
+                class="slide-produto"
+                data-nome="Blush Compacto 03 - Miss Rôse"
+              >
                 <img
                   src="imagem/blush-compacto-miss-rose-n03.png"
                   alt="Blush Compacto 03 - Miss Rôse"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -1017,8 +1231,15 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Batom Líquido Matte 06 - Safira">
-                <img src="imagem/batom-matte-safira.png" alt="Batom Líquido Matte 06 - Safira" />
+              <div
+                class="slide-produto"
+                data-nome="Batom Líquido Matte 06 - Safira"
+              >
+                <img
+                  src="imagem/batom-matte-safira.png"
+                  alt="Batom Líquido Matte 06 - Safira"
+                  loading="lazy"
+                />
               </div>
             </div>
 
@@ -1040,10 +1261,14 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Batom Líquido Matte 03 - Miss Rôse">
+              <div
+                class="slide-produto"
+                data-nome="Batom Líquido Matte 03 - Miss Rôse"
+              >
                 <img
                   src="imagem/batom-matte-miss-rose.png"
                   alt="Batom Líquido Matte 03 - Miss Rôse"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -1066,10 +1291,14 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Batom Líquido Matte 03 - Mia Make">
+              <div
+                class="slide-produto"
+                data-nome="Batom Líquido Matte 03 - Mia Make"
+              >
                 <img
                   src="imagem/batom-matte-mia-make.png"
                   alt="Batom Líquido Matte 03 - Mia Make"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -1092,8 +1321,15 @@
         <div class="card" data-categoria="olhos" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Kit Cílios Postiços - JummyJu">
-                <img src="imagem/cilios.JPEG" alt="Kit Cílios Postiços - JummyJu" />
+              <div
+                class="slide-produto"
+                data-nome="Kit Cílios Postiços - JummyJu"
+              >
+                <img
+                  src="imagem/cilios.JPEG"
+                  alt="Kit Cílios Postiços - JummyJu"
+                  loading="lazy"
+                />
               </div>
             </div>
 
@@ -1117,15 +1353,17 @@
             <div class="slides-produto">
               <div class="slide-produto" data-nome="Pó Translúcido - Febella">
                 <img
-                  src="imagem/pó-translúcido-febella.png"
+                  src="imagem/po-translucido-febella.png"
                   alt="Pó Translúcido - Febella"
+                  loading="lazy"
                 />
               </div>
 
               <div class="slide-produto" data-nome="Pó Translúcido - Febella">
                 <img
-                  src="imagem/pó.png"
+                  src="imagem/po.png"
                   alt="Pó Translúcido - Febella"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -1148,10 +1386,15 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Lápis Labial Matte - Yvisiy">
+              <div
+                class="slide-produto"
+                data-nome="Lápis Labial Matte - Yvisiy"
+                data-preco="20.00"
+              >
                 <img
-                  src="imagem/lápis-labial-matte-nude-yvisiy.png"
+                  src="imagem/lapis-labial-matte-nude-yvisiy.png"
                   alt="Lápis Labial Matte - Yvisiy"
+                  loading="lazy"
                 />
               </div>
 
@@ -1159,6 +1402,7 @@
                 <img
                   src="imagem/teste2.png"
                   alt="Lápis Labial Matte - Yvisiy"
+                  loading="lazy"
                 />
               </div>
 
@@ -1166,6 +1410,7 @@
                 <img
                   src="imagem/teste1.png"
                   alt="Lápis Labial Matte - Yvisiy"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -1188,12 +1433,17 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="Cake Gloss Red Velvet - #SuperPoderes">
+              <div
+                class="slide-produto"
+                data-nome="Cake Gloss Red Velvet - #SuperPoderes"
+              >
                 <img
                   src="imagem/cake-gloss.png"
                   alt="Cake Gloss Red Velvet - #SuperPoderes"
+                  loading="lazy"
                 />
               </div>
+            </div>
 
             <button class="prev-produto">‹</button>
             <button class="next-produto">›</button>
@@ -1209,29 +1459,68 @@
             Adicionar ao carrinho
           </button>
         </div>
-
       </div>
     </main>
+    <!-- CARRINHO FLUTUANTE -->
+    <button class="carrinho-flutuante">
+      🛒 <span class="contador-carrinho">0</span>
+    </button>
+
+    <!-- MODAL CARRINHO -->
     <div class="modal-carrinho" id="modal-carrinho">
       <div class="conteudo-carrinho">
         <button class="fechar-carrinho">&times;</button>
         <h2>Meu Carrinho</h2>
+
         <div class="lista-carrinho"></div>
+
         <div class="total-carrinho">Total: <span id="total">R$ 0,00</span></div>
+
+        <!-- 🔽 CHECKOUT -->
+        <div class="checkout-lismakes">
+          <h3>Finalizar pedido</h3>
+
+          <input type="text" class="nome-cliente" placeholder="Seu nome" />
+
+          <select class="forma-pagamento">
+            <option value="">Forma de pagamento</option>
+            <option value="Pix">Pix</option>
+          </select>
+
+          <select class="tipo-entrega">
+            <option value="retirada">Retirada no local</option>
+            <option value="entrega">Entrega</option>
+          </select>
+
+          <div class="campo-endereco">
+            <input
+              type="text"
+              class="endereco-entrega"
+              placeholder="Rua, número, bairro"
+            />
+          </div>
+
+          <div class="campo-taxa">
+            <input
+              type="number"
+              class="taxa-entrega"
+              placeholder="Taxa de entrega"
+              value="2.00"
+              readonly
+            />
+          </div>
+        </div>
+        <!-- 🔼 CHECKOUT -->
+
         <button class="limpar-carrinho">Limpar carrinho</button>
         <button class="finalizar">Finalizar pelo WhatsApp</button>
       </div>
     </div>
-    <button class="carrinho-flutuante">
-      <i class="fa-solid fa-cart-shopping"></i>
-      <span class="contador-carrinho">0</span>
-    </button>
 
     <div id="fullscreen">
       <img src="" alt="Produto" />
       <span class="fechar">✕</span>
     </div>
-
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
