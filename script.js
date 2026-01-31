@@ -1,3 +1,7 @@
+/* ================= VARIÁVEIS GLOBAIS ================= */
+let carrinho = [];
+
+/* ================= DOM READY ================= */
 document.addEventListener("DOMContentLoaded", () => {
   console.log("JS carregado com sucesso 🚀");
 
@@ -18,8 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const botoesComprar = document.querySelectorAll(".btn-comprar");
   const contadorCarrinho = document.querySelector(".contador-carrinho");
 
-  /* ================= ESTADO ================= */
-  let carrinho = [];
   let categoriaAtiva = "todos";
 
   /* ================= STORAGE ================= */
@@ -36,8 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function atualizarContador() {
     if (!contadorCarrinho) return;
-    const totalQtd = carrinho.reduce((soma, item) => soma + item.qtd, 0);
-    contadorCarrinho.textContent = totalQtd;
+    contadorCarrinho.textContent = carrinho.reduce(
+      (soma, item) => soma + item.qtd,
+      0,
+    );
   }
 
   function filtrarProdutos() {
@@ -45,15 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const texto = inputBusca.value.toLowerCase();
 
     cards.forEach((card) => {
-      const nomeProduto =
-        card.querySelector("h3")?.textContent.toLowerCase() || "";
-      const categoriaProduto = card.dataset.categoria;
+      const nome =
+        card.querySelector(".nome-produto")?.textContent.toLowerCase() || "";
+      const categoria = card.dataset.categoria;
 
-      const bateTexto = nomeProduto.includes(texto);
-      const bateCategoria =
-        categoriaAtiva === "todos" || categoriaProduto === categoriaAtiva;
+      const mostrar =
+        nome.includes(texto) &&
+        (categoriaAtiva === "todos" || categoria === categoriaAtiva);
 
-      card.style.display = bateTexto && bateCategoria ? "block" : "none";
+      card.style.display = mostrar ? "block" : "none";
     });
   }
 
@@ -64,16 +68,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let total = 0;
 
     carrinho.forEach((item, index) => {
-      total += item.preco * item.qtd;
+      const subtotal = item.preco * item.qtd;
+      total += subtotal;
 
       const div = document.createElement("div");
       div.classList.add("item-carrinho");
-
       div.innerHTML = `
         <span>${item.nome} (x${item.qtd})</span>
         <span>
-          R$ ${(item.preco * item.qtd).toFixed(2)}
-          <button data-index="${index}">❌</button>
+          R$ ${subtotal.toFixed(2).replace(".", ",")}
+          <button>❌</button>
         </span>
       `;
 
@@ -87,10 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
       listaCarrinho.appendChild(div);
     });
 
-    totalSpan.textContent = `R$ ${total.toFixed(2)}`;
+    totalSpan.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
   }
 
-  /* ================= SLIDER PRODUTO ================= */
+  /* ================= SLIDER + PREÇO DINÂMICO ================= */
   document.querySelectorAll(".card").forEach((card) => {
     const slider = card.querySelector(".slider-produto");
     if (!slider) return;
@@ -104,17 +108,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const botaoComprar = card.querySelector(".btn-comprar");
 
     let index = 0;
-    const total = slidesItens.length;
 
     function atualizarSlide() {
       slides.style.transform = `translateX(-${index * 100}%)`;
 
       const slideAtual = slidesItens[index];
       const nome = slideAtual.dataset.nome;
-      const preco = slideAtual.dataset.preco;
+
+      let preco = slideAtual.dataset.preco;
+
+      if (!preco && botaoComprar?.dataset.preco) {
+        preco = botaoComprar.dataset.preco;
+      }
+
+      if (!preco) preco = "0.00";
 
       if (nomeProduto && nome) nomeProduto.textContent = nome;
-      if (botaoComprar && preco) {
+
+      if (botaoComprar) {
         botaoComprar.dataset.nome = nome;
         botaoComprar.dataset.preco = preco;
       }
@@ -122,13 +133,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnNext?.addEventListener("click", (e) => {
       e.stopPropagation();
-      index = (index + 1) % total;
+      index = (index + 1) % slidesItens.length;
       atualizarSlide();
     });
 
     btnPrev?.addEventListener("click", (e) => {
       e.stopPropagation();
-      index = (index - 1 + total) % total;
+      index = (index - 1 + slidesItens.length) % slidesItens.length;
       atualizarSlide();
     });
 
@@ -158,6 +169,8 @@ document.addEventListener("DOMContentLoaded", () => {
     botao.addEventListener("click", () => {
       const nome = botao.dataset.nome;
       const preco = parseFloat(botao.dataset.preco);
+
+      if (!nome || isNaN(preco)) return;
 
       const existente = carrinho.find((item) => item.nome === nome);
       existente ? existente.qtd++ : carrinho.push({ nome, preco, qtd: 1 });
@@ -189,79 +202,66 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ================= EMBARALHAR PRODUTOS ================= */
   const grid = document.querySelector(".produtos-grid");
   if (grid) {
-    const cardsGrid = Array.from(grid.children);
-
-    for (let i = cardsGrid.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [cardsGrid[i], cardsGrid[j]] = [cardsGrid[j], cardsGrid[i]];
-    }
-
-    cardsGrid.forEach((card) => grid.appendChild(card));
+    [...grid.children]
+      .sort(() => Math.random() - 0.5)
+      .forEach((card) => grid.appendChild(card));
   }
 
   atualizarContador();
 });
 
-document.querySelector(".finalizar")?.addEventListener("click", () => {
+/* ================= FINALIZAR WHATSAPP ================= */
+document.querySelector(".finalizar")?.addEventListener("click", (e) => {
+  e.preventDefault();
+
   if (carrinho.length === 0) return;
 
   const nomeCliente =
     document.querySelector(".nome-cliente")?.value.trim() || "Cliente";
-
   const formaPagamento =
     document.querySelector(".forma-pagamento")?.value || "Não informado";
-
-  const tipoEntregaSelecionada =
+  const tipoEntrega =
     document.querySelector(".tipo-entrega")?.value || "retirada";
-
   const bairro = document.querySelector(".bairro-entrega")?.value.trim() || "";
-
   const endereco =
     document.querySelector(".endereco-entrega")?.value.trim() || "";
-
   const taxaEntrega = parseFloat(
     document.querySelector(".taxa-entrega")?.value || 0,
   );
 
-  let mensagem = ` *Pedido LisMakes* \n\n`;
+  let mensagem = `💖 *Pedido LisMakes* 💖\n\n`;
   let total = 0;
 
   carrinho.forEach((item) => {
-    const subtotalItem = item.preco * item.qtd;
-    total += subtotalItem;
-
-    mensagem += ` ${item.nome} (x${item.qtd}) – R$ ${subtotalItem
+    const subtotal = item.preco * item.qtd;
+    total += subtotal;
+    mensagem += `💄 ${item.nome} (x${item.qtd}) – R$ ${subtotal
       .toFixed(2)
       .replace(".", ",")}\n`;
   });
 
-  mensagem += `\n *Subtotal:* R$ ${total.toFixed(2).replace(".", ",")}\n\n`;
+  mensagem += `\n🧾 *Subtotal:* R$ ${total.toFixed(2).replace(".", ",")}\n\n`;
+  mensagem += `👤 *Cliente:* ${nomeCliente}\n`;
+  mensagem += `💳 *Pagamento:* ${formaPagamento}\n`;
 
-  mensagem += ` *Cliente:* ${nomeCliente}\n`;
-  mensagem += ` *Pagamento:* ${formaPagamento}\n`;
-
-  if (tipoEntregaSelecionada === "retirada") {
-    mensagem += ` *Retirada no local*\n`;
-  } else {
-    mensagem += ` *Entrega*\n`;
-
-    if (bairro) mensagem += ` *Bairro:* ${bairro}\n`;
-    if (endereco) mensagem += ` *Endereço:* ${endereco}\n`;
-
-    mensagem += ` *Taxa de entrega:* R$ ${taxaEntrega
-      .toFixed(2)
-      .replace(".", ",")}\n`;
-
+  if (tipoEntrega === "entrega") {
+    mensagem += `🚚 *Entrega*\n`;
+    if (bairro) mensagem += `📍 *Bairro:* ${bairro}\n`;
+    if (endereco) mensagem += `🏠 *Endereço:* ${endereco}\n`;
+    mensagem += `💸 *Taxa:* R$ ${taxaEntrega.toFixed(2).replace(".", ",")}\n`;
     total += taxaEntrega;
+  } else {
+    mensagem += `📍 *Retirada no local*\n`;
   }
 
-  mensagem += `\n *Valor total:* R$ ${total.toFixed(2).replace(".", ",")}\n\n`;
+  mensagem += `\n✨ *Valor total:* R$ ${total
+    .toFixed(2)
+    .replace(".", ",")}\n\n`;
+  mensagem += `🤍 Muito obrigada pela preferência!\n`;
 
-  mensagem += ` *Muito obrigada pela preferência!*\n`;
-  mensagem += `Esperamos que você ame seus produtinhos `;
-
-  const telefone = "5583986283024"; // seu número
-  const mensagemFinal = encodeURIComponent(mensagem);
-
-  window.open(`https://wa.me/${telefone}?text=${mensagemFinal}`, "_blank");
+  const telefone = "5583986283024";
+  window.open(
+    `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`,
+    "_blank",
+  );
 });
