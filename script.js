@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!inputBusca) return;
     const texto = inputBusca.value.toLowerCase();
 
-    cards.forEach(card => {
+    cards.forEach((card) => {
       const nomeProduto =
         card.querySelector("h3")?.textContent.toLowerCase() || "";
       const categoriaProduto = card.dataset.categoria;
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ================= SLIDER PRODUTO ================= */
-  document.querySelectorAll(".card").forEach(card => {
+  document.querySelectorAll(".card").forEach((card) => {
     const slider = card.querySelector(".slider-produto");
     if (!slider) return;
 
@@ -120,13 +120,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    btnNext?.addEventListener("click", e => {
+    btnNext?.addEventListener("click", (e) => {
       e.stopPropagation();
       index = (index + 1) % total;
       atualizarSlide();
     });
 
-    btnPrev?.addEventListener("click", e => {
+    btnPrev?.addEventListener("click", (e) => {
       e.stopPropagation();
       index = (index - 1 + total) % total;
       atualizarSlide();
@@ -140,12 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
     categorias?.classList.toggle("ativa");
   });
 
-  linksCategorias.forEach(link => {
-    link.addEventListener("click", e => {
+  linksCategorias.forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
       categoriaAtiva = link.dataset.categoria;
 
-      linksCategorias.forEach(l => l.classList.remove("ativo"));
+      linksCategorias.forEach((l) => l.classList.remove("ativo"));
       link.classList.add("ativo");
 
       filtrarProdutos();
@@ -154,12 +154,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inputBusca?.addEventListener("input", filtrarProdutos);
 
-  botoesComprar.forEach(botao => {
+  botoesComprar.forEach((botao) => {
     botao.addEventListener("click", () => {
       const nome = botao.dataset.nome;
       const preco = parseFloat(botao.dataset.preco);
 
-      const existente = carrinho.find(item => item.nome === nome);
+      const existente = carrinho.find((item) => item.nome === nome);
       existente ? existente.qtd++ : carrinho.push({ nome, preco, qtd: 1 });
 
       salvarCarrinho();
@@ -196,8 +196,72 @@ document.addEventListener("DOMContentLoaded", () => {
       [cardsGrid[i], cardsGrid[j]] = [cardsGrid[j], cardsGrid[i]];
     }
 
-    cardsGrid.forEach(card => grid.appendChild(card));
+    cardsGrid.forEach((card) => grid.appendChild(card));
   }
 
   atualizarContador();
+});
+
+document.querySelector(".finalizar")?.addEventListener("click", () => {
+  if (carrinho.length === 0) return;
+
+  const nomeCliente =
+    document.querySelector(".nome-cliente")?.value.trim() || "Cliente";
+
+  const formaPagamento =
+    document.querySelector(".forma-pagamento")?.value || "Não informado";
+
+  const tipoEntregaSelecionada =
+    document.querySelector(".tipo-entrega")?.value || "retirada";
+
+  const bairro = document.querySelector(".bairro-entrega")?.value.trim() || "";
+
+  const endereco =
+    document.querySelector(".endereco-entrega")?.value.trim() || "";
+
+  const taxaEntrega = parseFloat(
+    document.querySelector(".taxa-entrega")?.value || 0,
+  );
+
+  let mensagem = ` *Pedido LisMakes* \n\n`;
+  let total = 0;
+
+  carrinho.forEach((item) => {
+    const subtotalItem = item.preco * item.qtd;
+    total += subtotalItem;
+
+    mensagem += ` ${item.nome} (x${item.qtd}) – R$ ${subtotalItem
+      .toFixed(2)
+      .replace(".", ",")}\n`;
+  });
+
+  mensagem += `\n *Subtotal:* R$ ${total.toFixed(2).replace(".", ",")}\n\n`;
+
+  mensagem += ` *Cliente:* ${nomeCliente}\n`;
+  mensagem += ` *Pagamento:* ${formaPagamento}\n`;
+
+  if (tipoEntregaSelecionada === "retirada") {
+    mensagem += ` *Retirada no local*\n`;
+  } else {
+    mensagem += ` *Entrega*\n`;
+
+    if (bairro) mensagem += ` *Bairro:* ${bairro}\n`;
+    if (endereco) mensagem += ` *Endereço:* ${endereco}\n`;
+
+    mensagem += ` *Taxa de entrega:* R$ ${taxaEntrega
+      .toFixed(2)
+      .replace(".", ",")}\n`;
+
+    total += taxaEntrega;
+  }
+
+  mensagem += `\n *Valor total:* R$ ${total.toFixed(2).replace(".", ",")}\n\n`;
+
+  mensagem += ` *Muito obrigada pela preferência!*\n`;
+  mensagem += `Esperamos que você ame seus produtinhos `;
+
+  const telefone = "5583986283024"; // seu número
+  const mensagemFinal = encodeURIComponent(mensagem);
+
+  window.open(`https://wa.me/${telefone}?text=${mensagemFinal}`, "_blank");
 });
