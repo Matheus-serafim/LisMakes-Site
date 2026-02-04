@@ -278,7 +278,7 @@ document.querySelector(".finalizar")?.addEventListener("click", (e) => {
     .replace(".", ",")}\n\n`;
   mensagem += `🤍 Muito obrigada pela preferência!`;
 
-  const telefone = "5583986283024";
+  const telefone = "5583994137265";
   window.open(
     `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`,
     "_blank",
