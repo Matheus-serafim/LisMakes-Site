@@ -210,6 +210,21 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarContador();
 });
 
+/* ================= ENTREGA / RETIRADA ================= */
+const tipoEntregaSelect = document.querySelector(".tipo-entrega");
+const campoEndereco = document.querySelector(".campo-endereco");
+const campoTaxa = document.querySelector(".campo-taxa");
+
+tipoEntregaSelect.addEventListener("change", () => {
+  if (tipoEntregaSelect.value === "entrega") {
+    campoEndereco.style.display = "block";
+    campoTaxa.style.display = "block";
+  } else {
+    campoEndereco.style.display = "none";
+    campoTaxa.style.display = "none";
+  }
+});
+
 /* ================= FINALIZAR WHATSAPP ================= */
 document.querySelector(".finalizar")?.addEventListener("click", (e) => {
   e.preventDefault();
@@ -218,13 +233,16 @@ document.querySelector(".finalizar")?.addEventListener("click", (e) => {
 
   const nomeCliente =
     document.querySelector(".nome-cliente")?.value.trim() || "Cliente";
+
   const formaPagamento =
     document.querySelector(".forma-pagamento")?.value || "Não informado";
+
   const tipoEntrega =
     document.querySelector(".tipo-entrega")?.value || "retirada";
-  const bairro = document.querySelector(".bairro-entrega")?.value.trim() || "";
+
   const endereco =
     document.querySelector(".endereco-entrega")?.value.trim() || "";
+
   const taxaEntrega = parseFloat(
     document.querySelector(".taxa-entrega")?.value || 0,
   );
@@ -235,18 +253,19 @@ document.querySelector(".finalizar")?.addEventListener("click", (e) => {
   carrinho.forEach((item) => {
     const subtotal = item.preco * item.qtd;
     total += subtotal;
+
     mensagem += `💄 ${item.nome} (x${item.qtd}) – R$ ${subtotal
       .toFixed(2)
       .replace(".", ",")}\n`;
   });
 
   mensagem += `\n🧾 *Subtotal:* R$ ${total.toFixed(2).replace(".", ",")}\n\n`;
+
   mensagem += `👤 *Cliente:* ${nomeCliente}\n`;
   mensagem += `💳 *Pagamento:* ${formaPagamento}\n`;
 
   if (tipoEntrega === "entrega") {
     mensagem += `🚚 *Entrega*\n`;
-    if (bairro) mensagem += `📍 *Bairro:* ${bairro}\n`;
     if (endereco) mensagem += `🏠 *Endereço:* ${endereco}\n`;
     mensagem += `💸 *Taxa:* R$ ${taxaEntrega.toFixed(2).replace(".", ",")}\n`;
     total += taxaEntrega;
@@ -257,11 +276,28 @@ document.querySelector(".finalizar")?.addEventListener("click", (e) => {
   mensagem += `\n✨ *Valor total:* R$ ${total
     .toFixed(2)
     .replace(".", ",")}\n\n`;
-  mensagem += `🤍 Muito obrigada pela preferência!\n`;
+  mensagem += `🤍 Muito obrigada pela preferência!`;
 
   const telefone = "5583986283024";
   window.open(
     `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`,
     "_blank",
   );
+});
+
+/* ================= DISPONIBILIDADE DE PRODUTOS ================= */
+const cardsProdutos = document.querySelectorAll(".card");
+
+cardsProdutos.forEach((card) => {
+  const status = card.dataset.status;
+  const btnComprar = card.querySelector(".btn-comprar");
+
+  if (status === "indisponivel") {
+    card.classList.add("indisponivel");
+
+    if (btnComprar) {
+      btnComprar.disabled = true;
+      btnComprar.textContent = "Indisponível";
+    }
+  }
 });

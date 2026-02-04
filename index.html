@@ -68,7 +68,7 @@
         <div class="card" data-categoria="labios" data-status="disponivel">
           <div class="slider-produto">
             <div class="slides-produto">
-              <div class="slide-produto" data-nome="batons-maxlove">
+              <div class="slide-produto" data-nome="Batom Líquido Matte - MaxLove">
                 <img
                   src="imagem/batons-maxlove.png"
                   alt="batons-maxlove"
@@ -749,7 +749,7 @@
           </button>
         </div>
 
-        <div class="card" data-categoria="olhos" data-status="disponivel">
+        <div class="card" data-categoria="olhos" data-status="indisponivel">
           <div class="slider-produto">
             <div class="slides-produto">
               <div class="slide-produto" data-nome="Máscara Cílios - Vivai">
@@ -998,7 +998,7 @@
           </button>
         </div>
 
-        <div class="card" data-categoria="labios" data-status="disponivel">
+        <div class="card" data-categoria="labios" data-status="indisponivel">
           <div class="slider-produto">
             <div class="slides-produto">
               <div
@@ -1365,7 +1365,7 @@
           </button>
         </div>
 
-        <div class="card" data-categoria="labios" data-status="disponivel">
+        <div class="card" data-categoria="labios" data-status="indisponivel">
           <div class="slider-produto">
             <div class="slides-produto">
               <div
@@ -1459,45 +1459,42 @@
         <div class="total-carrinho">Total: <span id="total">R$ 0,00</span></div>
 
         <!-- 🔽 CHECKOUT -->
-        <div class="checkout-lismakes">
-          <h3>Finalizar pedido</h3>
+<div class="checkout-lismakes">
+  <h3>Finalizar pedido</h3>
 
-          <input type="text" class="nome-cliente" placeholder="Seu nome" />
+  <input type="text" class="nome-cliente" placeholder="Seu nome" />
 
-          <select class="forma-pagamento">
-            <option value="">Forma de pagamento</option>
-            <option value="Pix">Pix</option>
-          </select>
+  <select class="forma-pagamento">
+    <option value="">Forma de pagamento</option>
+    <option value="Pix">Pix</option>
+  </select>
 
-          <select class="tipo-entrega">
-            <option value="retirada">Retirada no local</option>
-            <option value="entrega">Entrega</option>
-          </select>
+  <select class="tipo-entrega">
+    <option value="retirada">Retirada no local</option>
+    <option value="entrega">Entrega</option>
+  </select>
 
-          <div class="campo-endereco">
-            <input
-              type="text"
-              class="endereco-entrega"
-              placeholder="Rua, número, bairro"
-            />
-          </div>
+  <div class="campo-endereco" style="display: none">
+    <input
+      type="text"
+      class="endereco-entrega"
+      placeholder="Rua, número, bairro"
+    />
+  </div>
 
-          <div class="campo-taxa">
-            <input
-              type="number"
-              class="taxa-entrega"
-              placeholder="Taxa de entrega"
-              value="2.00"
-              readonly
-            />
-          </div>
-        </div>
-        <!-- 🔼 CHECKOUT -->
+  <div class="campo-taxa" style="display: none">
+    <input
+      type="number"
+      class="taxa-entrega"
+      value="2.00"
+      readonly
+    />
+  </div>
+</div>
+<!-- 🔼 CHECKOUT -->
 
-        <button class="limpar-carrinho">Limpar carrinho</button>
-        <button class="finalizar">Finalizar pelo WhatsApp</button>
-      </div>
-    </div>
+<button class="limpar-carrinho">Limpar carrinho</button>
+<button class="finalizar">Finalizar pelo WhatsApp</button>
 
     <div id="fullscreen">
       <img src="" alt="Produto" />
