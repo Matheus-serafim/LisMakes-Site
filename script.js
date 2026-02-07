@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     totalSpan.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
   }
 
-  /* ================= SLIDER + PREÇO DINÂMICO ================= */
+  /* ================= SLIDER + PREÇO + DISPONIBILIDADE POR SLIDE ================= */
   document.querySelectorAll(".card").forEach((card) => {
     const slider = card.querySelector(".slider-produto");
     if (!slider) return;
@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const slideAtual = slidesItens[index];
       const nome = slideAtual.dataset.nome;
+      const status = slideAtual.dataset.status || "disponivel";
 
       let preco = slideAtual.dataset.preco;
 
@@ -128,6 +129,16 @@ document.addEventListener("DOMContentLoaded", () => {
       if (botaoComprar) {
         botaoComprar.dataset.nome = nome;
         botaoComprar.dataset.preco = preco;
+
+        if (status === "indisponivel") {
+          botaoComprar.disabled = true;
+          botaoComprar.textContent = "Indisponível";
+          botaoComprar.style.opacity = "0.6";
+        } else {
+          botaoComprar.disabled = false;
+          botaoComprar.textContent = "Adicionar ao carrinho";
+          botaoComprar.style.opacity = "1";
+        }
       }
     }
 
@@ -167,6 +178,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   botoesComprar.forEach((botao) => {
     botao.addEventListener("click", () => {
+      if (botao.disabled) return;
+
       const nome = botao.dataset.nome;
       const preco = parseFloat(botao.dataset.preco);
 
@@ -215,7 +228,7 @@ const tipoEntregaSelect = document.querySelector(".tipo-entrega");
 const campoEndereco = document.querySelector(".campo-endereco");
 const campoTaxa = document.querySelector(".campo-taxa");
 
-tipoEntregaSelect.addEventListener("change", () => {
+tipoEntregaSelect?.addEventListener("change", () => {
   if (tipoEntregaSelect.value === "entrega") {
     campoEndereco.style.display = "block";
     campoTaxa.style.display = "block";
@@ -283,21 +296,4 @@ document.querySelector(".finalizar")?.addEventListener("click", (e) => {
     `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`,
     "_blank",
   );
-});
-
-/* ================= DISPONIBILIDADE DE PRODUTOS ================= */
-const cardsProdutos = document.querySelectorAll(".card");
-
-cardsProdutos.forEach((card) => {
-  const status = card.dataset.status;
-  const btnComprar = card.querySelector(".btn-comprar");
-
-  if (status === "indisponivel") {
-    card.classList.add("indisponivel");
-
-    if (btnComprar) {
-      btnComprar.disabled = true;
-      btnComprar.textContent = "Indisponível";
-    }
-  }
 });
