@@ -1,0 +1,516 @@
+[
+  {
+    "_categoria": "LABIOS"
+  },
+  {
+    "categoria": "labios",
+    "nome": "Gloss Labial Vivai",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "batom-matte-vivai.png",
+        "nome": "Gloss Labial Vivai",
+        "status": "disponivel"
+      },
+      {
+        "img": "batom-matte1.png",
+        "nome": "Gloss Vivai - Cor 05",
+        "status": "indisponivel"
+      },
+      {
+        "img": "batom-matte2.png",
+        "nome": "Gloss Vivai - Cor 04",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "labios",
+    "nome": "Lip Balm Cherry Lips - Ruby Rose",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "lip-balm-cherry-lips-rubyrose.png",
+        "nome": "Lip Balm Cherry Lips - Ruby Rose"
+      },
+      {
+        "img": "lip-balm1.png",
+        "nome": "Cherry Lips - Cor 60",
+        "status": "indisponivel"
+      },
+      {
+        "img": "lip-balm2.png",
+        "nome": "Cherry Lips - Cor 40",
+        "status": "disponivel"
+      },
+      {
+        "img": "lip-balm3.png",
+        "nome": "Cherry Lips - Cor 50",
+        "status": "disponivel"
+      },
+      {
+        "img": "cores.jpg",
+        "nome": "Tabela De Cores 40/50/60",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "labios",
+    "nome": "Lip Gloss 24K Gold Love - Lua&Neve",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "lip-gloss-24k-gold-love-luaeneve.png",
+        "nome": "Lip Gloss 24K Gold Love - Lua&Neve",
+        "status": "disponivel"
+      },
+      {
+        "img": "lip-gloss-luaeneve3.png",
+        "nome": "Gloss Lua&Neve - Cor 05",
+        "status": "disponivel"
+      },
+      {
+        "img": "lip-gloss-luaeneve1.png",
+        "nome": "Gloss Lua&Neve - Cor 03",
+        "status": "indisponivel"
+      },
+      {
+        "img": "lip-gloss-luaeneve2.png",
+        "nome": "Gloss Lua&Neve - Cor 06",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "labios",
+    "nome": "Honey Lips - Asti",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "honey-lips-asti.png",
+        "nome": "Honey Lips - Asti",
+        "status": "disponivel"
+      },
+      {
+        "img": "honey1.png",
+        "nome": "Honey Lips - Asti",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "labios",
+    "nome": "Lip Gloss - Lua&Neve",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "luaeneve-lip-gloss.png",
+        "nome": "Lip Gloss - Lua&Neve",
+        "status": "disponivel"
+      },
+      {
+        "img": "luaeneve-lip-gloss1.png",
+        "nome": "Lip Gloss Lua&Neve - Cor 01",
+        "status": "disponivel"
+      },
+      {
+        "img": "luaeneve-lip-gloss2.png",
+        "nome": "Lip Gloss Lua&Neve - Cor 06",
+        "status": "disponivel"
+      },
+      {
+        "img": "luaeneve-lip-gloss3.png",
+        "nome": "Lip Gloss Lua&Neve - Cor 04",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "labios",
+    "nome": "Lip Tint - Lua&Neve",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "lip-tint-luaEneve.png",
+        "nome": "Lip Tint - Lua&Neve",
+        "status": "disponivel"
+      },
+      {
+        "img": "lip-tint-luaEneve1.png",
+        "nome": "Lip Tint - Cor 01",
+        "status": "disponivel"
+      },
+      {
+        "img": "lip-tint-luaEneve2.png",
+        "nome": "Lip Tint - Cor 02",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "labios",
+    "nome": "Lip Gloss",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "lip-tint-luaEneve.png",
+        "nome": "Lip Gloss",
+        "status": "disponivel"
+      },
+      {
+        "img": "lip-gloss-cogumelo.png",
+        "nome": "Lip Gloss",
+        "status": "disponivel"
+      },
+      {
+        "img": "lip-gloss-cogumelo1.png",
+        "nome": "Lip Gloss - JummyJu",
+        "status": "disponivel"
+      },
+      {
+        "img": "lip-gloss-cogumelo2.png",
+        "nome": "Lip Gloss - Pola aylr",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "labios",
+    "nome": "Lip Gloss hidrantante - Lua&Neve",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "hidrantante-luaeneve.png",
+        "nome": "Lip Gloss hidrantante - Lua&Neve",
+        "status": "disponivel"
+      },
+      {
+        "img": "hidrantante-luaeneve1.png",
+        "nome": "Lip Gloss hidrantante - Cor 03",
+        "status": "disponivel"
+      },
+      {
+        "img": "hidrantante-luaeneve2.png",
+        "nome": "Lip Gloss hidrantante - Cor 01",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "labios",
+    "nome": "Gelato Beauty - Fenzza",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "gelato-beauty.png",
+        "nome": "Gelato Beauty - Fenzza",
+        "status": "disponivel"
+      },
+      {
+        "img": "gelato-beauty1.png",
+        "nome": "Batom Gelato Moranguete",
+        "status": "disponivel"
+      },
+      {
+        "img": "gelato-beauty2.png",
+        "nome": "Batom Gelato Chocotinho",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "labios",
+    "nome": "Batom Soft Matte Parque Encantado - Fenzza",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "batom-fenzza.png",
+        "nome": "Batom Soft Matte Parque Encantado - Fenzza",
+        "status": "disponivel"
+      },
+      {
+        "img": "batom-fenzza1.png",
+        "nome": "Batom Líquido - Sabor Maça do Amor",
+        "status": "disponivel"
+      },
+      {
+        "img": "batom-fenzza2.png",
+        "nome": "Batom Gelato Chocotinho",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "_categoria": "ROSTO"
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Blush Compacto Selva Neon Miss Rôse",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "blush-miss-rose.png",
+        "nome": "Blush Compacto Selva Neon Miss Rôse",
+        "status": "disponivel"
+      },
+      {
+        "img": "blush-compacto-selva-neon-miss-rose.png",
+        "nome": "Blush Selva - Cor 03",
+        "status": "disponivel"
+      },
+      {
+        "img": "blush-compacto-selva-neon-miss-rose2.png",
+        "nome": "Blush Selva - Cor 02",
+        "status": "indisponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Sombra Para Sobrancelhas Duo Brow Perfection - Ruby Rose",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "ruby-rose.png",
+        "nome": "Sombra Para Sobrancelhas Duo Brow Perfection - Ruby Rose",
+        "status": "disponivel"
+      },
+      {
+        "img": "ruby-rose(2).png",
+        "nome": "Duo 05 - Tonalidades: 09 e 10",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Bronzer Glam - Vivai",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "bronzer-vivai.png",
+        "nome": "Bronzer Glam - Vivai",
+        "status": "disponivel"
+      },
+      {
+        "img": "bronzer-vivai2.png",
+        "nome": "Bronzer Vivai - Cor 04",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Pó Compacto Matte - Alleva",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "po-compacto-alleva.png",
+        "nome": "Pó Compacto Matte - Alleva",
+        "status": "disponivel"
+      },
+      {
+        "img": "po-alleva.png",
+        "nome": "Pó Compacto Alleva - Cor 06",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Kit Esponja Losango Clim",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "esponja-clim.png",
+        "nome": "Kit Esponja Losango Clim",
+        "status": "disponivel"
+      },
+      {
+        "img": "esponja-losango-clim.png",
+        "nome": "Kit Esponja Losango Clim",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Gel Para Sobrancelhas Melu - Ruby Rose",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "gel-sobrancelhas-melu-ruby-rose.png",
+        "nome": "Gel Para Sobrancelhas Melu - Ruby Rose",
+        "status": "disponivel"
+      },
+      {
+        "img": "gel.jpg",
+        "nome": "Gel Para Sobrancelhas Melu - Ruby Rose",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Pó banana - Lady Beauty",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "po-banana.webp",
+        "nome": "Pó banana - Lady Beauty",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Esponja Chanfrada - Pink21 (Uma Unidade)",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "esponja-chanfrada-pink21.png",
+        "nome": "Esponja Chanfrada - Pink21",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Bruma Matte Fix - Miss Rôse",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "bruma-matte-fix-miss-rose.png",
+        "nome": "Bruma Matte Fix - Miss Rôse",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Blush Compacto 03 - Miss Rôse",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "blush-compacto-miss-rose-n03.png",
+        "nome": "Blush Compacto 03 - Miss Rôse",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Iluminador Matte Cremoso - Kyràv",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "iluminador-kyrav.png",
+        "nome": "Iluminador Matte Cremoso - Kyràv",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Água micelar - Kyràv",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "agua-micelar.png",
+        "nome": "Água micelar - Kyràv",
+        "status": "disponivel"
+      },
+      {
+        "img": "demaquilante1.png",
+        "nome": "Água Micelar Para Todos os Tipos de Pele - Efeito 5 em 1",
+        "status": "disponivel"
+      },
+      {
+        "img": "demaquilante2.png",
+        "nome": "Demaquilante Oil Free - Limpeza sem Esforço",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "_categoria": "OLHOS"
+  },
+  {
+    "categoria": "olhos",
+    "nome": "Cílios - Beautiful kiss",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "cilios-beautifulkiss.png",
+        "nome": "Cílios - Beautiful kiss",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "olhos",
+    "nome": "Delineador Líquido Parque Encantado - Fenzza",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "delineador-fenzza.png",
+        "nome": "Delineador Líquido Parque Encantado - Fenzza",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "olhos",
+    "nome": "Kit Cílios Postiços - JummyJu",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "cilios.JPEG",
+        "nome": "Kit Cílios Postiços - JummyJu",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "olhos",
+    "nome": "Cola Pro Para Cílios - Toque Especial",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "cola-de-cilios-toque-especial.png",
+        "nome": "Cola Pro Para Cílios - Toque Especial",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "olhos",
+    "nome": "Caneta Delineadora Sweet Heart - Lua&Neve",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "caneta-delineadora.png",
+        "nome": "Caneta Delineadora Sweet Heart - Lua&Neve",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "olhos",
+    "nome": "Máscara Cílios - Vivai",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "mascara-cilios-vivai.png",
+        "nome": "Máscara Cílios - Vivai",
+        "status": "disponivel"
+      },
+      {
+        "img": "mascara-de-cílios-vivai.png",
+        "nome": "Máscara Cílios - Vivai",
+        "status": "disponivel"
+      }
+    ]
+  }
+]

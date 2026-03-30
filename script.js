@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnMenu = document.querySelector(".btn-menu");
   const categorias = document.querySelector(".categorias");
   const linksCategorias = document.querySelectorAll(".categorias a");
-  const cards = document.querySelectorAll(".card");
 
   const inputBusca = document.querySelector(".barra-pesquisa input");
 
@@ -19,8 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const listaCarrinho = document.querySelector(".lista-carrinho");
   const totalSpan = document.querySelector("#total");
   const limparBtn = document.querySelector(".limpar-carrinho");
-  const botoesComprar = document.querySelectorAll(".btn-comprar");
   const contadorCarrinho = document.querySelector(".contador-carrinho");
+
+  const container = document.getElementById("produtos-container");
 
   let categoriaAtiva = "todos";
 
@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     carrinho = [];
   }
 
-  /* ================= FUNÇÕES ================= */
   function salvarCarrinho() {
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
   }
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!inputBusca) return;
     const texto = inputBusca.value.toLowerCase();
 
-    cards.forEach((card) => {
+    document.querySelectorAll(".card").forEach((card) => {
       const nome =
         card.querySelector(".nome-produto")?.textContent.toLowerCase() || "";
       const categoria = card.dataset.categoria;
@@ -94,68 +93,147 @@ document.addEventListener("DOMContentLoaded", () => {
     totalSpan.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
   }
 
-  /* ================= SLIDER + PREÇO + DISPONIBILIDADE POR SLIDE ================= */
-  document.querySelectorAll(".card").forEach((card) => {
-    const slider = card.querySelector(".slider-produto");
-    if (!slider) return;
+  /* ================= CARREGAR PRODUTOS ================= */
+  fetch("json/produtos.json")
+    .then((res) => res.json())
+    .then((produtos) => {
+      container.innerHTML = "";
 
-    const slides = slider.querySelector(".slides-produto");
-    const slidesItens = slider.querySelectorAll(".slide-produto");
-    const btnPrev = slider.querySelector(".prev-produto");
-    const btnNext = slider.querySelector(".next-produto");
+      produtos.forEach((produto) => {
+        // 🔥 IGNORA ITENS DE CATEGORIA
+        if (!produto.slides) return;
 
-    const nomeProduto = card.querySelector(".nome-produto");
-    const botaoComprar = card.querySelector(".btn-comprar");
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.setAttribute("data-categoria", produto.categoria);
 
-    let index = 0;
+        let slidesHTML = "";
 
-    function atualizarSlide() {
-      slides.style.transform = `translateX(-${index * 100}%)`;
+        produto.slides.forEach((slide) => {
+          let imagem;
+          let nome;
+          let status = "";
 
-      const slideAtual = slidesItens[index];
-      const nome = slideAtual.dataset.nome;
-      const status = slideAtual.dataset.status || "disponivel";
+          if (typeof slide === "string") {
+            imagem = slide;
+            nome = produto.nome;
+          } else {
+            imagem = slide.img;
+            nome = slide.nome || produto.nome;
+            status = slide.status ? `data-status="${slide.status}"` : "";
+          }
 
-      let preco = slideAtual.dataset.preco;
+          slidesHTML += `
+            <div class="slide-produto" data-nome="${nome}" ${status}>
+              <img src="imagem/${imagem}" loading="lazy">
+            </div>
+          `;
+        });
 
-      if (!preco && botaoComprar?.dataset.preco) {
-        preco = botaoComprar.dataset.preco;
-      }
+        card.innerHTML = `
+          <div class="slider-produto">
+            <div class="slides-produto">${slidesHTML}</div>
+            <button class="prev-produto">‹</button>
+            <button class="next-produto">›</button>
+          </div>
 
-      if (!preco) preco = "0.00";
+          <h3 class="nome-produto">${produto.nome}</h3>
 
-      if (nomeProduto && nome) nomeProduto.textContent = nome;
+          <button class="btn-comprar"
+            data-nome="${produto.nome}"
+            data-preco="${produto.preco}">
+            Adicionar ao carrinho
+          </button>
+        `;
 
-      if (botaoComprar) {
-        botaoComprar.dataset.nome = nome;
-        botaoComprar.dataset.preco = preco;
+        container.appendChild(card);
+      });
 
-        if (status === "indisponivel") {
-          botaoComprar.disabled = true;
-          botaoComprar.textContent = "Indisponível";
-          botaoComprar.style.opacity = "0.6";
-        } else {
-          botaoComprar.disabled = false;
-          botaoComprar.textContent = "Adicionar ao carrinho";
-          botaoComprar.style.opacity = "1";
+      iniciarSliders();
+      iniciarEventosCompra();
+      embaralharProdutos();
+    })
+    .catch((err) => console.error("Erro ao carregar JSON:", err));
+
+  /* ================= SLIDER ================= */
+  function iniciarSliders() {
+    document.querySelectorAll(".card").forEach((card) => {
+      const slides = card.querySelector(".slides-produto");
+      const slidesItens = card.querySelectorAll(".slide-produto");
+      const btnPrev = card.querySelector(".prev-produto");
+      const btnNext = card.querySelector(".next-produto");
+
+      const nomeProduto = card.querySelector(".nome-produto");
+      const botaoComprar = card.querySelector(".btn-comprar");
+
+      let index = 0;
+
+      function atualizarSlide() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+
+        const slideAtual = slidesItens[index];
+        const nome = slideAtual.dataset.nome;
+        const status = slideAtual.dataset.status || "disponivel";
+
+        if (nomeProduto && nome) nomeProduto.textContent = nome;
+
+        if (botaoComprar) {
+          botaoComprar.dataset.nome = nome;
+
+          if (status === "indisponivel") {
+            botaoComprar.disabled = true;
+            botaoComprar.textContent = "Indisponível";
+            botaoComprar.style.opacity = "0.6";
+          } else {
+            botaoComprar.disabled = false;
+            botaoComprar.textContent = "Adicionar ao carrinho";
+            botaoComprar.style.opacity = "1";
+          }
         }
       }
-    }
 
-    btnNext?.addEventListener("click", (e) => {
-      e.stopPropagation();
-      index = (index + 1) % slidesItens.length;
+      btnNext?.addEventListener("click", () => {
+        index = (index + 1) % slidesItens.length;
+        atualizarSlide();
+      });
+
+      btnPrev?.addEventListener("click", () => {
+        index = (index - 1 + slidesItens.length) % slidesItens.length;
+        atualizarSlide();
+      });
+
       atualizarSlide();
     });
+  }
 
-    btnPrev?.addEventListener("click", (e) => {
-      e.stopPropagation();
-      index = (index - 1 + slidesItens.length) % slidesItens.length;
-      atualizarSlide();
+  function iniciarEventosCompra() {
+    document.querySelectorAll(".btn-comprar").forEach((botao) => {
+      botao.addEventListener("click", () => {
+        if (botao.disabled) return;
+
+        const nome = botao.dataset.nome;
+        const preco = parseFloat(botao.dataset.preco);
+
+        const existente = carrinho.find((item) => item.nome === nome);
+        existente ? existente.qtd++ : carrinho.push({ nome, preco, qtd: 1 });
+
+        salvarCarrinho();
+        atualizarContador();
+
+        botao.classList.add("adicionado");
+        setTimeout(() => botao.classList.remove("adicionado"), 400);
+      });
     });
+  }
 
-    atualizarSlide();
-  });
+  function embaralharProdutos() {
+    const grid = document.querySelector(".produtos-grid");
+    if (!grid) return;
+
+    [...grid.children]
+      .sort(() => Math.random() - 0.5)
+      .forEach((card) => grid.appendChild(card));
+  }
 
   /* ================= EVENTOS ================= */
   btnMenu?.addEventListener("click", () => {
@@ -176,26 +254,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inputBusca?.addEventListener("input", filtrarProdutos);
 
-  botoesComprar.forEach((botao) => {
-    botao.addEventListener("click", () => {
-      if (botao.disabled) return;
-
-      const nome = botao.dataset.nome;
-      const preco = parseFloat(botao.dataset.preco);
-
-      if (!nome || isNaN(preco)) return;
-
-      const existente = carrinho.find((item) => item.nome === nome);
-      existente ? existente.qtd++ : carrinho.push({ nome, preco, qtd: 1 });
-
-      salvarCarrinho();
-      atualizarContador();
-
-      botao.classList.add("adicionado");
-      setTimeout(() => botao.classList.remove("adicionado"), 400);
-    });
-  });
-
   btnCarrinho?.addEventListener("click", () => {
     modalCarrinho?.classList.add("ativo");
     renderizarCarrinho();
@@ -211,14 +269,6 @@ document.addEventListener("DOMContentLoaded", () => {
     atualizarContador();
     renderizarCarrinho();
   });
-
-  /* ================= EMBARALHAR PRODUTOS ================= */
-  const grid = document.querySelector(".produtos-grid");
-  if (grid) {
-    [...grid.children]
-      .sort(() => Math.random() - 0.5)
-      .forEach((card) => grid.appendChild(card));
-  }
 
   atualizarContador();
 });
@@ -289,11 +339,10 @@ document.querySelector(".finalizar")?.addEventListener("click", (e) => {
   mensagem += `\n✨ *Valor total:* R$ ${total
     .toFixed(2)
     .replace(".", ",")}\n\n`;
+
   mensagem += `🤍 Muito obrigada pela preferência!`;
 
-  const telefone = "5583994137265";
   window.open(
-    `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`,
-    "_blank",
+    `https://wa.me/5583994137265?text=${encodeURIComponent(mensagem)}`,
   );
 });
