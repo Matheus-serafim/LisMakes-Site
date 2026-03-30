@@ -199,12 +199,12 @@
       },
       {
         "img": "batom-fenzza1.png",
-        "nome": "Batom Líquido - Sabor Maça do Amor",
+        "nome": "Batom Líquido - Sabor Churros",
         "status": "disponivel"
       },
       {
         "img": "batom-fenzza2.png",
-        "nome": "Batom Gelato Chocotinho",
+        "nome": "Batom Líquido - Maçã do Amor",
         "status": "disponivel"
       }
     ]
@@ -507,6 +507,43 @@
       {
         "img": "pincelverdeoliva.png",
         "nome": "Verde Oliva",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Base Líquida Vegana - Briá Beauty",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "baseliquidavegna01.png",
+        "nome": "Base Líquida Vegana - Cor 01",
+        "status": "disponivel"
+      },
+      {
+        "img": "baseliquidavegna02.png",
+        "nome": "Base Líquida Vegana - Cor 02",
+        "status": "disponivel"
+      },
+      {
+        "img": "baseliquidavegna03.png",
+        "nome": "Base Líquida Vegana - Cor 03",
+        "status": "disponivel"
+      },
+      {
+        "img": "baseliquidavegna04.png",
+        "nome": "Base Líquida Vegana - Cor 04",
+        "status": "disponivel"
+      },
+      {
+        "img": "baseliquidavegna05.png",
+        "nome": "Base Líquida Vegana - Cor 05",
+        "status": "disponivel"
+      },
+      {
+        "img": "baseliquidavegna06.png",
+        "nome": "Base Líquida Vegana - Cor 06",
         "status": "disponivel"
       }
     ]
