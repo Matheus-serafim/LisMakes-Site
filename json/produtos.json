@@ -1,6 +1,6 @@
 [
   {
-    "_categoria": "LABIOS"
+    "_categoria": "=======================LABIOS====================="
   },
   {
     "categoria": "labios",
@@ -154,11 +154,6 @@
     "preco": 10,
     "slides": [
       {
-        "img": "lip-tint-luaEneve.png",
-        "nome": "Lip Gloss",
-        "status": "disponivel"
-      },
-      {
         "img": "lip-gloss-cogumelo.png",
         "nome": "Lip Gloss",
         "status": "disponivel"
@@ -242,7 +237,7 @@
     ]
   },
   {
-    "_categoria": "ROSTO"
+    "_categoria": "=======================ROSTO======================"
   },
   {
     "categoria": "rosto",
@@ -434,7 +429,129 @@
     ]
   },
   {
-    "_categoria": "OLHOS"
+    "categoria": "rosto",
+    "nome": "Pó Translúcido Vegano - Dapop",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "potranslucido.png",
+        "nome": "Pó Translúcido Vegano - Dapop",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Pó Banana Ultrafino - Briá Beauty",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "pobanana.png",
+        "nome": "Pó Banana Ultrafino - Briá Beauty",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Blush em Stick - Vivai",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "blushstick01.png",
+        "nome": "Blush em Stick 01 - Vivai",
+        "status": "disponivel"
+      },
+      {
+        "img": "blushstick02.png",
+        "nome": "Blush em Stick 02 - Vivai",
+        "status": "disponivel"
+      },
+      {
+        "img": "blushstick03.png",
+        "nome": "Blush em Stick 03 - Vivai",
+        "status": "disponivel"
+      },
+      {
+        "img": "blushstick04.png",
+        "nome": "Blush em Stick 04 - Vivai",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Duo Blush e Iluminador Glam - Vivai",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "blushglama.png",
+        "nome": "Duo Blush e Iluminador Glam cor A - Vivai",
+        "status": "disponivel"
+      },
+      {
+        "img": "blushglamb.png",
+        "nome": "Duo Blush e Iluminador Glam cor B - Vivai",
+        "status": "disponivel"
+      },
+      {
+        "img": "blushglamc.png",
+        "nome": "Duo Blush e Iluminador Glam cor C - Vivai",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "Iluminador Chaveiro Me leva - Vivai",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "meleva01.png",
+        "nome": "Iluminador Chaveiro Me leva 01 - Vivai",
+        "status": "disponivel"
+      },
+      {
+        "img": "meleva03.png",
+        "nome": "Iluminador Chaveiro Me leva 03 - Vivai",
+        "status": "disponivel"
+      },
+      {
+        "img": "meleva04.png",
+        "nome": "Iluminador Chaveiro Me leva 04 - Vivai",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "rosto",
+    "nome": "kit de 8 mini pincéis",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "pincelazul.png",
+        "nome": "Azul",
+        "status": "disponivel"
+      },
+      {
+        "img": "pincelcreme.png",
+        "nome": "Creme",
+        "status": "disponivel"
+      },
+      {
+        "img": "pincelrosa.png",
+        "nome": "Rosa",
+        "status": "disponivel"
+      },
+      {
+        "img": "pincelverdeoliva.png",
+        "nome": "Verde Oliva",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "_categoria": "=======================OLHOS======================"
   },
   {
     "categoria": "olhos",
@@ -509,6 +626,30 @@
       {
         "img": "mascara-de-cílios-vivai.png",
         "nome": "Máscara Cílios - Vivai",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "olhos",
+    "nome": "Máscara de Cílios Efeito Boneca - Griffty Make Up",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "grifftymake.png",
+        "nome": "Máscara de Cílios Efeito Boneca - Griffty Make Up",
+        "status": "disponivel"
+      }
+    ]
+  },
+  {
+    "categoria": "olhos",
+    "nome": "Paleta de Sombra 4 Cores - Lua&Neve",
+    "preco": 10,
+    "slides": [
+      {
+        "img": "paleta4cores.png",
+        "nome": "Paleta de Sombra 4 Cores - Lua&Neve",
         "status": "disponivel"
       }
     ]
