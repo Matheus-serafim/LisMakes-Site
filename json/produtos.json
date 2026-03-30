@@ -57,33 +57,6 @@
   },
   {
     "categoria": "labios",
-    "nome": "Lip Gloss 24K Gold Love - Lua&Neve",
-    "preco": 10,
-    "slides": [
-      {
-        "img": "lip-gloss-24k-gold-love-luaeneve.png",
-        "nome": "Lip Gloss 24K Gold Love - Lua&Neve",
-        "status": "disponivel"
-      },
-      {
-        "img": "lip-gloss-luaeneve3.png",
-        "nome": "Gloss Lua&Neve - Cor 05",
-        "status": "disponivel"
-      },
-      {
-        "img": "lip-gloss-luaeneve1.png",
-        "nome": "Gloss Lua&Neve - Cor 03",
-        "status": "indisponivel"
-      },
-      {
-        "img": "lip-gloss-luaeneve2.png",
-        "nome": "Gloss Lua&Neve - Cor 06",
-        "status": "disponivel"
-      }
-    ]
-  },
-  {
-    "categoria": "labios",
     "nome": "Honey Lips - Asti",
     "preco": 10,
     "slides": [
@@ -112,7 +85,7 @@
       {
         "img": "luaeneve-lip-gloss1.png",
         "nome": "Lip Gloss Lua&Neve - Cor 01",
-        "status": "disponivel"
+        "status": "indisponivel"
       },
       {
         "img": "luaeneve-lip-gloss2.png",
@@ -348,18 +321,6 @@
   },
   {
     "categoria": "rosto",
-    "nome": "Pó banana - Lady Beauty",
-    "preco": 10,
-    "slides": [
-      {
-        "img": "po-banana.webp",
-        "nome": "Pó banana - Lady Beauty",
-        "status": "disponivel"
-      }
-    ]
-  },
-  {
-    "categoria": "rosto",
     "nome": "Esponja Chanfrada - Pink21 (Uma Unidade)",
     "preco": 10,
     "slides": [
@@ -492,7 +453,7 @@
       {
         "img": "blushglamb.png",
         "nome": "Duo Blush e Iluminador Glam cor B - Vivai",
-        "status": "disponivel"
+        "status": "indisponivel"
       },
       {
         "img": "blushglamc.png",
